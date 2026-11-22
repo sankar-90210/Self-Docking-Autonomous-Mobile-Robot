@@ -84,10 +84,15 @@ def generate_launch_description():
         package="ros_gz_bridge",
         executable="parameter_bridge",
         arguments=[
-            "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"
+            "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
+            "/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"
+            # "/imu@sensor_msgs/msg/Imu[gz.msgs.IMU",
+            # "/camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo",
+        ],
+        remappings=[
+            ('/imu', '/imu/out'),
         ]
     )
-
     return LaunchDescription([
         model_arg,
         world_name_arg,
