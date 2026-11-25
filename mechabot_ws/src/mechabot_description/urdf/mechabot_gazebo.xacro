@@ -72,7 +72,7 @@
         </plugin>
 
         <!-- imu -->
-        <!-- <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/> -->
+        <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
     </gazebo>
 
     <!-- Bot Sensors-->
@@ -110,7 +110,7 @@
     </gazebo>
 
     <!-- IMU -->
-    <!-- <gazebo reference="imu_link">
+    <gazebo reference="imu_link">
         <sensor name="imu" type="imu">
             <always_on>true</always_on>
             <update_rate>100</update_rate>
@@ -159,10 +159,10 @@
                 </linear_acceleration>
             </imu>
         </sensor>
-    </gazebo> -->
+    </gazebo>
 
     <!-- Camera -->
-    <!-- <gazebo reference="camera_link">
+    <gazebo reference="camera_link">
         <sensor name="camera" type="camera">
             <pose>0 0 0 0 0 0 </pose>
             <visualize>true</visualize>
@@ -184,6 +184,6 @@
                 </clip>
             </camera>
         </sensor>
-  </gazebo> -->
+  </gazebo>
 
 </robot>
