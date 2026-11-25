@@ -93,6 +93,13 @@ def generate_launch_description():
             ('/imu', '/imu/out'),
         ]
     )
+    
+    ros_gz_image_bridge = Node(
+        package="ros_gz_image",
+        executable="image_bridge",
+        arguments=["/camera/image_raw"]
+    )
+    
     return LaunchDescription([
         model_arg,
         world_name_arg,
@@ -100,5 +107,6 @@ def generate_launch_description():
         robot_state_publisher_node,
         gazebo,
         gz_spawn_entity,
-        gz_ros2_bridge
+        gz_ros2_bridge,
+        ros_gz_image_bridge
     ])
